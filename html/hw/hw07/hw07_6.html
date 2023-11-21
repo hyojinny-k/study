@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+        * { 
+            background-color: rgb(0, 0, 0);
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            font-family: 함초롬돋움;
+        }
+        li {
+            list-style-type: none;
+        }
+        #head {
+            color: blanchedalmond;
+        }
+        #logo {
+            float: left;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        #top {
+            float: right;
+            margin: 40px 30px 20px 0;
+        }
+        #menu {
+            clear: both;
+            height: 40px;
+            background-color: #90635d;
+            color: white;
+            text-align: center;
+            padding-top: 7px;
+            font-size: 15px;
+        }
+        #menu li {
+            display: inline;
+            background-color: #90635d;
+        }
+        .item {
+            font-size: 150%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0 30px 0 30px;
+        }
+        a {
+            color: white;
+            background-color: #90635d;
+        }
+        #img {
+            margin: 30px 0 10px 0;
+        }
+        form {
+            margin-top: 150px;
+            border-radius: 5px;
+            border: 3px solid blanchedalmond;
+            color: rgb(87, 79, 68);
+            background-color: blanchedalmond;
+            font-size: 150%;
+            width: 700px;
+        }
+        h3 {
+            background-color: blanchedalmond;
+            margin : 15px 0 15px 0;
+        }
+        p {
+            background-color: blanchedalmond;
+        }
+        td {
+            background-color: blanchedalmond;
+            font-size: 70%;
+        }
+        th {
+            font-size: 70%;
+        }
+        select {
+            background-color: rgb(255, 224, 177);
+        }
+        option {
+            background-color: rgb(255, 224, 177);
+        }
+        input {
+            background-color: rgb(255, 224, 177);
+            margin: 5px 10px 5px 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <div id="logo" style="text-decoration: none;">
+            <li class="item">
+                <a href="./hw07.html" style="background-color: black;">
+                    <img src="./img/logo.jpg" alt="타이타닉" style="width: 421px; height: 100px;">
+                </a>
+            </li>
+        </div>
+        <div id="top">
+            <a href="./hw07_5.html" style="background-color: black; color: blanchedalmond;">로그인</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./hw07_6.html" style="background-color: black; color: blanchedalmond;">회원가입</a>
+        </div>
+    </div>
+    <ul id="menu">
+        <a href="./hw07_1.html"><li class="item">실화</li></a>
+        <li>·</li>
+        <a href="./hw07_2.html"><li class="item">기본 정보</li></a>
+        <li>·<li>
+        <a href="./hw07_3.html"><li class="item">갤러리</li></a>
+        <li>·</li>
+        <a href="./hw07_4.html"><li class="item">비하인드</li></a>
+    </ul>
+    <center>
+        <form>
+            <h3>회원가입</h3>
+            
+            <table border="1">
+                <tr>
+                <th style="background-color: blanchedalmond" colspan="3">회원 기본 정보</th>
+                </tr>
+                <tr>
+                <th style="background-color: blanchedalmond">아이디</th>
+                <td><input type ="text" name="id" size="20"> 4~10자의 영문 대소문자와 숫자로만 입력</td>
+                </tr>
+                
+                <tr>
+                <th style="background-color: blanchedalmond">비밀번호</th>
+                <td><input type ="password" name="my_pwd" size="20"> 6~12자의 영문 대소문자와 숫자로만 입력</td>
+                </tr>
+                
+                <tr>
+                <th style="background-color: blanchedalmond">비밀번호 확인</th>
+                <td><input type ="password" name="my_pwd" size="20"></td>
+                </tr>
+                
+                <tr>
+                <th style="background-color: blanchedalmond">메일주소</th>
+                <td><input type ="text" name="mail" size="20"> 예) id@domain.com</td>
+                </tr>
+                
+                <tr>
+                <th style="background-color: blanchedalmond">이름</th>
+                <td><input type ="text" name="name" size="6"></td>
+                </tr>
+
+                <tr>
+                <th style="background-color: blanchedalmond">생년월일</th>
+                <td><input type ="text" name="year" size="6">년
+                
+                <select name="top1">
+                <option value="선택">선택</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                </select> 월
+                
+                <select name="top2">
+                <option value="선택">선택</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                </select> 일
+                </td>
+                </tr>
+            </table>
+
+        <input type="submit" value="회원가입">
+        <input type="reset" value="다시입력">
+     </form>  
+            
+    </center>
+</body>
+
+</html>
+

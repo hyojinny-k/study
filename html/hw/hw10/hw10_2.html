@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        th {
+            text-align: left;
+        }
+    </style>
+    <script>
+        function printData() {
+            var target=document.getElementById("gugudan");
+            var dan, num;
+            var gu=new Array();
+            var result;
+            var data="";   
+            data+="<table border='1'>";
+            for (dan=1; dan<=9; dan++) {
+                data+=("<th>" + dan + "단" + "</th>")
+                gu[dan]=new Array();
+            }
+            for(dan=1; dan<=9; dan++) {
+                data+="<tr>";
+                for(num=1; num<=9; num++) {
+                    gu[num][dan]=dan*num;
+                    data+="<td>" + num + '*' + dan + '=' + gu[num][dan] + "</td>";
+                }
+                data+="</tr>";
+            }
+            data+="</table>";
+            target.innerHTML=data;
+        }
+    </script>
+</head>
+<body>
+    <span id="gugudan"></span>
+    <br>
+    <input type="button" value="구구단 배열 데이터 보기" onclick="printData();">
+</body>
+</html>
