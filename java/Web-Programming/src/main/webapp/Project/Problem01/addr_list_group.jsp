@@ -1,0 +1,77 @@
+<%-- 컴퓨터학과 20210777 김효진 --%>
+<%-- 크롬 브라우저에 최적화된 문서입니다 --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="project.pr01. *"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/tml4/loose.dtd">
+<jsp:useBean id="am" class="project.pr01.AddrManager" scope="application" />
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>주소록 목록(그룹별)</title>
+<style>
+	table {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<div align="center">
+<h2>주소록 (그룹별 보기)</h2>
+<hr>
+<a href="addr_form.jsp">주소추가</a>
+<p></p>
+<table border=1 width=500>
+<tr><td>이름</td><td>전화번호</td><td>이메일</td><td>성별</td><td>그룹</td></tr>
+<%
+int i = 0, rpp = 2;
+int sindex, allpage, currentPage, startIndex, lastIndex;
+
+if (am.getAddrList2().size() == 1)
+	allpage = 1;
+else
+	allpage = (am.getAddrList2().size() + 1) / rpp;	
+
+if (request.getParameter("sindex") == null) {
+	currentPage = 1;
+}
+else
+	currentPage = Integer.parseInt(request.getParameter("sindex"));
+
+startIndex = (currentPage - 1) * rpp;
+if (am.getAddrList2().size() % rpp == 0)
+	lastIndex = startIndex + rpp - 1;
+else
+	lastIndex = startIndex + rpp - 1;
+
+for (AddrBean ab : am.getAddrList2()) {
+	if (i >= startIndex && i <= lastIndex) {
+%>
+	<tr>
+	<td><%=ab.getUsername() %></td>
+	<td><%=ab.getTel() %></td>
+	<td><%=ab.getEmail() %></td>
+	<td><%=ab.getGender() %></td>
+	<td><%=ab.getGroup() %></td>
+	</tr>	
+<%
+	}	
+	i++;
+}
+%>
+</table>
+<%
+for (i = 1; i <= allpage; i++) {
+	if (i != currentPage) {
+%>
+		<a href="addr_list_group.jsp?sindex=<%=i%>"><%=i%></a>&nbsp;
+<%
+	}
+	else {
+			out.print(i + "&nbsp;");
+	}
+} 
+%>
+</div>
+</body>
+</html>
