@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+void initArray(int arr[], int size) { //변경하지 말라
+	int i, k = 0;
+	for (i = 0; i < size; i++)
+		scanf("%d", &arr[i]);
+	return;
+}
+
+void printArray(int arr[], int size) { //변경하지 말라
+	int i;
+	for (i = 0; i < size; i++)
+		printf("%d ", arr[i]);
+	printf("\n");
+	return;
+}
+
+void turnArray(int array1[], int array2[], int size)
+{
+	int i;
+	array2[0] = array1[size - 1];
+	for (i = 1; i < size; i++)
+		array2[i] = array1[i - 1];
+}
+
+int main(void) // 변경하지 말라
+{
+	int arr1[5];
+	int arr2[5];
+	int i;
+	int n;
+
+	initArray(arr1, 5);
+	turnArray(arr1, arr2, 5);
+	printArray(arr2, 5);
+}
